@@ -5,7 +5,7 @@ vesper is an idiomatic approach to building resilient http clients in go.
 
 ## Usage
 
-```golang
+```go
 package main
 
 import (
