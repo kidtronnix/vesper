@@ -1,5 +1,6 @@
 # vesper
 [![GoDoc](https://godoc.org/github.com/smaxwellstewart/vesper?status.svg)](http://godoc.org/github.com/smaxwellstewart/vesper)
+[![Build Status](https://travis-ci.org/smaxwellstewart/vesper.svg?branch=master)](https://travis-ci.org/smaxwellstewart/vesper)
 
 vesper is an idiomatic approach to building resilient http clients in go.
 
