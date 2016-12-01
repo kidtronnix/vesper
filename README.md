@@ -22,16 +22,14 @@ func main() {
 
 	// make a resiliient http client
 	client = vesper.Decorate(
-    // provide your own http client to decorate
-		&http.Client{Timeout: time.Second},
-    // decorators
+		&http.Client{Timeout: time.Second}, // your http client
 		vesper.Logger(log.New(os.Stdout, "[vesper]", 0)),
 		vesper.Retry(retrier.New(retrier.ConstantBackoff(*retries, *backoff), nil)),
 		vesper.Breaker(breaker.New(10, 1, 5*time.Second)),
 		vesper.RateLimit(l.Limiter()),
 	)
 
-  // Use client just like normal.
+  // use client just like normal.
   req, _ := http.NewRequest("GET", "http://example.com", nil)
   resp, err := client.Do(req)
   // ...
