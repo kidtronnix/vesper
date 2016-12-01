@@ -1,4 +1,4 @@
-package httpclient
+package vesper
 
 import (
 	"net/http"
@@ -6,7 +6,7 @@ import (
 	"github.com/smaxwellstewart/go-resiliency/retrier"
 )
 
-// Retry will attempt to make http call multiple times accoring to provided retrier.
+// Retry will retry failed http requests according to provided retrier.
 func Retry(retry *retrier.Retrier) Decorator {
 	return func(c Client) Client {
 		return ClientFunc(func(r *http.Request) (*http.Response, error) {

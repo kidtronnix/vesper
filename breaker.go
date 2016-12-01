@@ -1,4 +1,4 @@
-package httpclient
+package vesper
 
 import (
 	"net/http"
@@ -6,6 +6,8 @@ import (
 	"github.com/smaxwellstewart/go-resiliency/breaker"
 )
 
+// Breaker will return an early error, without calling URL, if provided breaker has opened.
+// This is useful to stop client from making many calls when service is causing requests to stack up.
 func Breaker(b *breaker.Breaker) Decorator {
 	return func(c Client) Client {
 		return ClientFunc(func(r *http.Request) (*http.Response, error) {

@@ -1,4 +1,4 @@
-package httpclient
+package vesper
 
 // We define what a decorator to our client will look like
 type Decorator func(Client) Client

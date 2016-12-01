@@ -1,16 +1,17 @@
-package httpclient
+package vesper
 
 import "net/http"
 
-// Our client is defined as something that does a http request and gets a response and error
+// Client is the interface all our http client decorators must use.
 type Client interface {
 	Do(*http.Request) (*http.Response, error)
 }
 
-// Singature of DoFunc
+// The ClientFunc type is an adapter to allow the use of ordinary functions as http clients.
+// If f is a function with the appropriate signature, ClientFunc(f) is a Handler that calls f.
 type ClientFunc func(*http.Request) (*http.Response, error)
 
-// Add method to DoFunc type to satisfy Client interface
+// Do calls f(r).
 func (f ClientFunc) Do(r *http.Request) (*http.Response, error) {
 	return f(r)
 }

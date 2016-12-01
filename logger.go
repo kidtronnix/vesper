@@ -1,4 +1,4 @@
-package httpclient
+package vesper
 
 import (
 	"log"
@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-// Auth will make sure to add auth token to request header
+// Logger will print a useful log message when a http request finishes.
 func Logger(l *log.Logger) Decorator {
 	return func(c Client) Client {
 		return ClientFunc(func(r *http.Request) (*http.Response, error) {
@@ -14,7 +14,7 @@ func Logger(l *log.Logger) Decorator {
 			resp, err := c.Do(r)
 			var msg string
 			if err != nil {
-				msg = "Error! " + err.Error()
+				msg = "Error: " + err.Error()
 			} else {
 				msg = resp.Status
 			}
