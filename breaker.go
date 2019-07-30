@@ -3,7 +3,7 @@ package vesper
 import (
 	"net/http"
 
-	"github.com/smaxwellstewart/go-resiliency/breaker"
+	"github.com/kidtronnix/go-resiliency/breaker"
 )
 
 // Breaker will return an early error, without calling URL, if provided breaker has opened.

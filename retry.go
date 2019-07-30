@@ -3,7 +3,7 @@ package vesper
 import (
 	"net/http"
 
-	"github.com/smaxwellstewart/go-resiliency/retrier"
+	"github.com/kidtronnix/go-resiliency/retrier"
 )
 
 // Retry will retry failed http requests according to provided retrier.

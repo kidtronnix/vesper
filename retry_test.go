@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/smaxwellstewart/go-resiliency/retrier"
+	"github.com/kidtronnix/go-resiliency/retrier"
 	"github.com/stretchr/testify/assert"
 )
 

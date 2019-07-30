@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/smaxwellstewart/go-resiliency/breaker"
+	"github.com/kidtronnix/go-resiliency/breaker"
 	"github.com/stretchr/testify/assert"
 )
 
