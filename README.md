@@ -10,9 +10,9 @@ vesper is an idiomatic approach to building resilient http clients in go.
 package main
 
 import (
-  "github.com/smaxwellstewart/go-resiliency/breaker"
-  "github.com/smaxwellstewart/go-resiliency/limiter"
-  "github.com/smaxwellstewart/go-resiliency/retrier"
+  "github.com/kidtronnix/go-resiliency/breaker"
+  "github.com/kidtronnix/go-resiliency/limiter"
+  "github.com/kidtronnix/go-resiliency/retrier"
 )
 
 
