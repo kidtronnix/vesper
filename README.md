@@ -10,14 +10,14 @@ vesper is an idiomatic approach to building resilient http clients in go.
 package main
 
 import (
-  "github.com/kidtronnix/go-resiliency/breaker"
-  "github.com/kidtronnix/go-resiliency/limiter"
-  "github.com/kidtronnix/go-resiliency/retrier"
+ 	"github.com/kidtronnix/go-resiliency/breaker"
+ 	"github.com/kidtronnix/go-resiliency/limiter"
+	"github.com/kidtronnix/go-resiliency/retrier"
 )
 
 
 func main() {
-  // make rate limiter
+ 	// make rate limiter
 	l := limiter.New(0, 5.0)
 	defer l.Close()
 
@@ -30,10 +30,10 @@ func main() {
 		vesper.RateLimit(l.Limiter()),
 	)
 
-  // use client just like normal.
-  req, _ := http.NewRequest("GET", "http://example.com", nil)
-  resp, err := client.Do(req)
-  // ...
+  	// use client just like normal.
+	req, _ := http.NewRequest("GET", "http://example.com", nil)
+	resp, err := client.Do(req)
+  	// ...
 }
 
 ```
